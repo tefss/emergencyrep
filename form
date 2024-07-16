@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reportar Incidente</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.6.0/proj4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mgrs/1.0.0/mgrs.min.js"></script>
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function showPosition(position) {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+            const mgrsCoord = mgrs.forward([lon, lat]);
+            document.getElementById('location').value = mgrsCoord;
+        }
+
+        function sendWhatsAppMessage() {
+            const location = document.getElementById('location').value;
+            const who = document.getElementById('who').value;
+            const what = document.getElementById('what').value;
+            const where = document.getElementById('where').value;
+            const when = document.getElementById('when').value;
+            const actionTaken = document.getElementById('actionTaken').value;
+
+            const message = `Localização: ${location}%0AWho: ${who}%0AWhat: ${what}%0AWhere: ${where}%0AWhen: ${when}%0AAction Taken: ${actionTaken}`;
+            const phoneNumber = '009647861708695';
+            const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
+
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
+</head>
+<body onload="getLocation()">
+    <form onsubmit="sendWhatsAppMessage(); return false;">
+        <label for="location">Localização (MGRS):</label><br>
+        <input type="text" id="location" name="location" readonly><br><br>
+        
+        <label for="who">Who?</label><br>
+        <input type="text" id="who" name="who"><br><br>
+        
+        <label for="what">What?</label><br>
+        <textarea id="what" name="what"></textarea><br><br>
+        
+        <label for="where">Where?</label><br>
+        <textarea id="where" name="where"></textarea><br><br>
+        
+        <label for="when">When?</label><br>
+        <input type="datetime-local" id="when" name="when"><br><br>
+        
+        <label for="actionTaken">Action Taken?</label><br>
+        <textarea id="actionTaken" name="actionTaken"></textarea><br><br>
+        
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
