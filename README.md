@@ -55,7 +55,7 @@
             const actionTaken = document.getElementById('actionTaken').value;
 
             const message = `Location: ${location}%0AWho: ${who}%0AWhat: ${what}%0AWhere: ${where}%0AWhen: ${when}%0AAction Taken: ${actionTaken}`;
-            const phoneNumber = '+9647861708695';
+            const phoneNumber = '+9647845301590';
             const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
 
             // Update the WhatsApp link
