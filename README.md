@@ -86,25 +86,25 @@
 </head>
 <body>
     <form onsubmit="return false;">
-        <label for="location">Location (Google Maps Link):</label><br>
+        <label for="location">Location (Google Maps Link): الموقع</label><br>
         <input type="text" id="location" name="location" readonly><br><br>
         
-        <label for="who">Who?</label><br>
+        <label for="who">Who? من </label><br>
         <input type="text" id="who" name="who"><br><br>
         
-        <label for="what">What?</label><br>
+        <label for="what">What? ماذا</label><br>
         <textarea id="what" name="what"></textarea><br><br>
         
-        <label for="where">Where?</label><br>
+        <label for="where">Where? أين</label><br>
         <textarea id="where" name="where"></textarea><br><br>
         
-        <label for="when">When?</label><br>
+        <label for="when">When? متى</label><br>
         <input type="datetime-local" id="when" name="when"><br><br>
         
-        <label for="actionTaken">Action Taken?</label><br>
+        <label for="actionTaken">Action Taken? الإحراء المتخذ</label><br>
         <textarea id="actionTaken" name="actionTaken"></textarea><br><br>
         
-        <a id="whatsappLink" href="#" onclick="sendWhatsAppMessage()">Send WhatsApp Message</a>
+        <a id="whatsappLink" href="#" onclick="sendWhatsAppMessage()">Send WhatsApp Message ارسل رسالة واتساب</a>
     </form>
 </body>
 </html>
