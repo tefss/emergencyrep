@@ -101,7 +101,7 @@
         <label for="when">When? متى</label><br>
         <input type="datetime-local" id="when" name="when"><br><br>
         
-        <label for="actionTaken">Action Taken? الإحراء المتخذ</label><br>
+        <label for="actionTaken">Action Taken? الإجراء المتخذ</label><br>
         <textarea id="actionTaken" name="actionTaken"></textarea><br><br>
         
         <a id="whatsappLink" href="#" onclick="sendWhatsAppMessage()">Send WhatsApp Message ارسل رسالة واتساب</a>
